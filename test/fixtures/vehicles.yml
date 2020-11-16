@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  citizen: one
+  make: MyString
+  model: MyString
+  vin: MyString
+  v_type: 1
+  manufactured: 1
+  imported: 2020-11-15 12:58:08
+  discarded_at: 2020-11-15 12:58:08
+
+two:
+  citizen: two
+  make: MyString
+  model: MyString
+  vin: MyString
+  v_type: 1
+  manufactured: 1
+  imported: 2020-11-15 12:58:08
+  discarded_at: 2020-11-15 12:58:08
