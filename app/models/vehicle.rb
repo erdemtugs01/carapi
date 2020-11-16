@@ -6,7 +6,7 @@ class Vehicle < ApplicationRecord
 
   validates_presence_of :make
   validates_presence_of :model
-  validates :vin, presence: true, length: { less_than_or_equal_to: 17 }
+  validates :vin, presence: true, length: { maximum: 17 }
   validates :v_type, presence: true
   validates :manufactured, length: { is: 4 }
   validates_presence_of :imported
