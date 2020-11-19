@@ -294,15 +294,15 @@ ActiveAdmin.setup do |config|
   # config.include_default_association_filters = true
 
   # config.maximum_association_filter_arity = 256 # default value of :unlimited will change to 256 in a future version
-  # config.filter_columns_for_large_association = [
-  #    :display_name,
-  #    :full_name,
-  #    :name,
-  #    :username,
-  #    :login,
-  #    :title,
-  #    :email,
-  #  ]
+  config.filter_columns_for_large_association = [
+     :display_name,
+     :full_name,
+     :name,
+     :username,
+     :login,
+     :title,
+     :email
+   ]
   # config.filter_method_for_large_association = '_starts_with'
 
   # == Head
