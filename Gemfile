@@ -54,8 +54,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'activeadmin'
-# gem 'pundit'
+gem 'pundit'
 gem 'devise'
 gem 'fast_jsonapi'
 gem 'rack-cors'
 gem 'discard'
+gem 'active_model_serializers'

@@ -1,5 +1,5 @@
 ActiveAdmin.register Vehicle do
-  permit_params :citizen_id, :make, :model, :vin, :v_type, :manufactured, :imported, :discarded_at, :plate_no
+  permit_params :citizen, :make, :model, :vin, :v_type, :manufactured, :imported, :discarded_at, :plate_no
   
   index do
     selectable_column
@@ -19,6 +19,10 @@ ActiveAdmin.register Vehicle do
       f.input :make
       f.input :model
       f.input :vin
+      f.input :v_type
+      f.input :citizen
+      f.input :manufactured
+      f.input :imported
     end
     f.actions
   end
