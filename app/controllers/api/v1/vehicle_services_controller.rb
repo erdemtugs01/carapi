@@ -3,17 +3,21 @@ module Api
     class VehicleServicesController < ApplicationController
       before_action :set_service
       def index
-        render json: @services
+        render json: to_json(@services)
       end
 
       def show
         @service = @services.find(params[:id])
-        render json: @service
+        render json: to_json(@service)
       end
 
       private
         def set_service
           @services = Vehicle.find(params[:vehicle_id]).vehicle_services
+        end
+
+        def to_json(data)
+          VehicleServiceSerializer.new(data, { include: [:service_type, :vehicle] })
         end
     end
   end

@@ -1,5 +1,5 @@
 ActiveAdmin.register Vehicle do
-  permit_params :citizen, :make, :model, :vin, :v_type, :manufactured, :imported, :discarded_at, :plate_no
+  permit_params :citizen_id, :make, :model, :vin, :v_type, :manufactured, :imported, :discarded_at, :plate_no
   
   index do
     selectable_column
@@ -13,6 +13,23 @@ ActiveAdmin.register Vehicle do
     actions
   end
 
+  show do |f|
+    attributes_table do
+      row :citizen do |c|
+        vehicle.citizen.register_no
+      end
+      row :make
+      row :model
+      row :v_type
+      row :vin
+      row :manufactured
+      row :imported
+      row :discarded_at
+      row :created_at
+      row :updated_at
+    end
+  end
+
   form do |f|
     f.inputs do
       f.input :plate_no
@@ -20,7 +37,7 @@ ActiveAdmin.register Vehicle do
       f.input :model
       f.input :vin
       f.input :v_type
-      f.input :citizen
+      f.input :citizen, as: :select, collection: Citizen.kept.pluck(:register_no, :id)
       f.input :manufactured
       f.input :imported
     end

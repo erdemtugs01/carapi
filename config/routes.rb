@@ -5,9 +5,14 @@ Rails.application.routes.draw do
   
   namespace :api do
     namespace :v1 do
-      resources :vehicles do 
+      mount_devise_token_auth_for 'User', at: 'auth', skip: [:passwords], controllers: {
+        sessions: 'api/v1/auth/sessions'
+      }
+
+      resources :vehicles do
         resources :vehicle_services, only: [:index, :show]
       end
+
       resources :citizens do
         resources :citizen_vehicles, only: :index
       end

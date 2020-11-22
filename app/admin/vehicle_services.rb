@@ -1,9 +1,9 @@
 ActiveAdmin.register VehicleService do
-  permit_params :service_type_id, :vehicle_id  
+  permit_params :service_type_id, :vehicle_id, :description
 
   index do
-    column :vehicle do |v|
-      v.vehicle.plate_no
+    column :vehicle do |service|
+      service.vehicle.plate_no
     end
     column :service_type
     actions
@@ -11,20 +11,21 @@ ActiveAdmin.register VehicleService do
 
   show do
     attributes_table do
-      row :vehicle do |v|
-        v.vehicle.plate_no
+      row :vehicle do |service|
+        service.vehicle.plate_no
       end
       row :service_type
+      row :description
       row :created_at
     end
   end
 
-  # form do |f|
-  #   f.inputs do
-  #     f.input :vehicle, as: :string do |v|
-  #       v.vehicle.plate_no
-  #     end
-  #     f.actions
-  #   end
-  # end
+  form do |f|
+    f.inputs do
+      f.input :vehicle, as: :select
+      f.input :service_type
+      f.input :description
+      f.actions
+    end
+  end
 end
