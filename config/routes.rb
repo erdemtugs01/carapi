@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       end
 
       resources :citizens do
-        resources :citizen_vehicles, only: :index
+        resources :vehicles, only: :index
       end
     end
   end

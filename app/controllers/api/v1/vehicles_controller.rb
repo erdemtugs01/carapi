@@ -4,7 +4,11 @@ module Api
       before_action :set_vehicle, only: [:show, :update, :destroy]
 
       def index
-        @vehicles = Vehicle.kept
+        @vehicles = if params[:citizen_id]
+          Citizen.find(params[:citizen_id]).vehicles
+        else
+          Vehicle.kept
+        end
         render json: @vehicles
       end
 
