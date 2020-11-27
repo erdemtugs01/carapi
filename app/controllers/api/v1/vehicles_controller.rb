@@ -9,27 +9,26 @@ module Api
         else
           Vehicle.kept
         end
-        render json: @vehicles
+        render json: to_json(@vehicles)
       end
 
       def show
-        render json: @vehicle
+        render json: to_json(@vehicle)
       end
 
       def create
         @vehicle = Vehicle.build(vehicle_params)
 
         if @vehicle.save
-          render json: @vehicle, status: :created
+          render json: to_json(@vehicle), status: :created
         else
           render json: {errors: @vehicle.errors}, status: :unprocessable_entity
         end
-        render json: @vehicle
       end
 
       def update
         if @vehicle.update(vehicle_params)
-          render json: @vehicle, status: :created
+          render json: to_json(@vehicle), status: :created
         else
           render json: {errors: @vehicle.errors}, status: :unprocessable_entity
         end
@@ -58,6 +57,10 @@ module Api
             :imported,
             :discarded_at
           )
+        end
+
+        def to_json(data)
+          VehicleSerializer.new(data)
         end
     end
   end
