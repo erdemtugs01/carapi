@@ -17,7 +17,7 @@ module Api
         end
 
         def to_json(data)
-          VehicleServiceSerializer.new(data, { include: [:service_type, :vehicle] })
+          VehicleServiceSerializer.new(data)
         end
     end
   end

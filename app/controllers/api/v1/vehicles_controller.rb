@@ -18,8 +18,6 @@ module Api
 
       def create
         @vehicle = Vehicle.new(vehicle_params)
-        puts 'VEHICLES PARAMS ARE HERE HEHEHEHEHHHEHEHEHEHEHEHEHEHEHEHEEHEHEH'
-        puts vehicle_params
         if @vehicle.save
           render json: to_json(@vehicle), status: :created
         else
