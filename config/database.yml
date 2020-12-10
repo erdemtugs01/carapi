@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: car_api_production
-  username: car_api
-  password: <%= ENV['CAR_API_DATABASE_PASSWORD'] %>
+  database: carfax_api_development
+  username: root
+  password: password

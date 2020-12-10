@@ -6,6 +6,7 @@ ActiveAdmin.register VehicleService do
       service.vehicle.plate_no
     end
     column :service_type
+    column :description
     actions
   end
 
@@ -22,7 +23,7 @@ ActiveAdmin.register VehicleService do
 
   form do |f|
     f.inputs do
-      f.input :vehicle, as: :select
+      f.input :vehicle, as: :select, collection: Vehicle.kept.pluck(:plate_no, :id)
       f.input :service_type
       f.input :description
       f.actions

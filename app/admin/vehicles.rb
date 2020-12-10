@@ -1,5 +1,5 @@
 ActiveAdmin.register Vehicle do
-  permit_params :citizen_id, :make, :model, :vin, :v_type, :manufactured, :imported, :discarded_at, :plate_no
+  permit_params :citizen_ids, :make, :model, :vin, :v_type, :manufactured, :imported, :discarded_at, :plate_no
   
   index do
     selectable_column
@@ -15,9 +15,7 @@ ActiveAdmin.register Vehicle do
 
   show do |f|
     attributes_table do
-      row :citizen do |c|
-        vehicle.citizen.register_no
-      end
+      row :citizen
       row :make
       row :model
       row :v_type

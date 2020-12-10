@@ -5,6 +5,9 @@ class ServiceTypePolicy < ApplicationPolicy
   def show?
     user.api? || user.service?
   end
+  def create?
+    user.service?
+  end
   def update?
     user.service?
   end
