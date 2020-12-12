@@ -34,5 +34,13 @@ VehicleService.create!(vehicle: a, service_type: servicemb4, description: "motor
 VehicleService.create!(vehicle: b, service_type: servicenissan1, description: "koput budav")
 VehicleService.create!(vehicle: b, service_type: servicenissan2, description: "kolits, huruuvch, gavliin jiireg soliv")
 
-# CitizenVehicle.create!(vehicle: a, citizen: citizen)
-# CitizenVehicle.create!(vehicle: b, citizen: citizen)
+citizen = Citizen.create!(register_no: 'uk9909xxxx', first_name: 'meegii', last_name: 'muugii', middle_name: 'hehehehe', address: 'bzd 3rd khoroo 73rd ap, room 205')
+a = citizen.vehicles.create!(make: 'bmw', model: '328i', manufactured: 2012, imported: '2020-10-02', vin: 'bmwhahahah', v_type: :B, plate_no: '5532uam')
+b = citizen.vehicles.create!(make: 'toyota', model: 'crown', manufactured: 2010, imported: '2018-01-22', vin: 'crownhhhhehheheh', v_type: :B, plate_no: '2789ubz')
+c = citizen.vehicles.create!(make: 'toyota', model: 'prius', manufactured: 2011, imported: '2015-01-22', vin: 'priushhhhehheheh', v_type: :B, plate_no: '6683unp')
+
+citizen = Citizen.create!(register_no: 'hi7101xxxx', first_name: 'ganzorig', last_name: 'yundendorj', middle_name: 'daddy', address: 'address hahha')
+
+VehicleService.create!(vehicle: a, service_type: servicemb2, description: 'zunii tos')
+VehicleService.create!(vehicle: b, service_type: servicemb4, description: 'transmission fuel replace')
+
