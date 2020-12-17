@@ -5,7 +5,7 @@ class VehiclePolicy < ApplicationPolicy
   end
 
   def create?
-    user.admin?
+    user.admin? || user.api?
   end
 
   def show?

@@ -5,7 +5,7 @@ module Api
       attribute :s_type do |object|
         object.service_type.name
       end
-      attribute :updated_at
+      attributes :service_date, :updated_at
     end
   end
 end
