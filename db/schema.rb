@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_23_080156) do
+ActiveRecord::Schema.define(version: 2020_12_17_041050) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "namespace"
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 2020_11_23_080156) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "description"
+    t.datetime "service_date"
     t.index ["service_type_id"], name: "index_vehicle_services_on_service_type_id"
     t.index ["vehicle_id"], name: "index_vehicle_services_on_vehicle_id"
   end
